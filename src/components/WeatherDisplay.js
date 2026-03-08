@@ -1,29 +1,29 @@
 import React, { useEffect } from "react";
 
-function WeatherDisplay({weather}) {
+const WeatherDisplay = ({ weather }) => {
 
-  const{ temperature, conditions }=weather;
+  const { temperature, conditions } = weather;
 
-  const style={
-    color:temperature >20 ? 'red' : 'blue'
+  const colorStyle = {
+    color: temperature > 20 ? "red" : "blue"
   };
 
-  useEfffect(()=>{
-    console.log('Weather Loaded');
+  useEffect(() => {
+    // just to demonstrate useEffect usage
+    console.log("Weather component loaded");
   }, []);
 
-return (
-  <div>
-  <p>
-  Tempearture: <span style={style}>{temperature}</span>
-  </p>
+  return (
+    <div>
+      <p>
+        Temperature: <span style={colorStyle}>{temperature}</span>
+      </p>
 
-<p>
-  Conditions: { conditions }
-  </p>
+      <p>
+        Conditions: {conditions}
+      </p>
     </div>
-);
-}
+  );
+};
 
-export default WeatherDispaly;
-
+export default WeatherDisplay;
