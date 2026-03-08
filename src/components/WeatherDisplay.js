@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import './../styles/App.css';
 
 const WeatherDisplay = ({ weather }) => {
 
@@ -8,17 +9,11 @@ const WeatherDisplay = ({ weather }) => {
     color: temperature > 20 ? "red" : "blue"
   };
 
-  useEffect(() => {
-    // just to demonstrate useEffect usage
-    console.log("Weather component loaded");
-  }, []);
-
   return (
     <div>
       <p>
         Temperature: <span style={colorStyle}>{temperature}</span>
       </p>
-
       <p>
         Conditions: {conditions}
       </p>
