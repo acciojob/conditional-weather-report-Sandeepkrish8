@@ -1,7 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./components/App";
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+import WeatherDisplay from "./components/WeatherDisplay";
 
+function App() {
 
+  const [weather] = useState({
+    temperature: 25,
+    conditions: "Sunny"
+  });
 
-ReactDOM.render(<App />, document.getElementById("root"));
+  return <WeatherDisplay weather={weather} />;
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
